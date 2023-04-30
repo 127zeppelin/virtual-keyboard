@@ -1,4 +1,4 @@
-const KEYBOARD = document.createElement('div');
+ const KEYBOARD = document.createElement('div');
 KEYBOARD.className = 'container__keyboard keyboard';
 export const CONTAINER = document.createElement('div');
 CONTAINER.className = 'container';

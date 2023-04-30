@@ -1,6 +1,6 @@
 [
   {
-    "className": "backquote",
+    "className": "Backquote",
     "eng": {
       "capsLock": "`",
       "lowerCase": "`",
@@ -15,7 +15,7 @@
     }
   },
   {
-    "className": "number1",
+    "className": "Digit1",
     "eng": {
       "capsLock": "1",
       "lowerCase": "1",
@@ -30,7 +30,7 @@
     }
   },
   {
-    "className": "number2",
+    "className": "Digit2",
     "eng": {
       "capsLock": "2",
       "lowerCase": "2",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "className": "number3",
+    "className": "Digit3",
     "eng": {
       "capsLock": "3",
       "lowerCase": "3",
@@ -60,7 +60,7 @@
     }
   },
   {
-    "className": "number4",
+    "className": "Digit4",
     "eng": {
       "capsLock": "4",
       "lowerCase": "4",
@@ -75,7 +75,7 @@
     }
   },
   {
-    "className": "number5",
+    "className": "Digit5",
     "eng": {
       "capsLock": "5",
       "lowerCase": "5",
@@ -90,7 +90,7 @@
     }
   },
   {
-    "className": "number6",
+    "className": "Digit6",
     "eng": {
       "capsLock": "6",
       "lowerCase": "6",
@@ -105,7 +105,7 @@
     }
   },
   {
-    "className": "number7",
+    "className": "Digit7",
     "eng": {
       "capsLock": "7",
       "lowerCase": "7",
@@ -120,7 +120,7 @@
     }
   },
   {
-    "className": "number8",
+    "className": "Digit8",
     "eng": {
       "capsLock": "8",
       "lowerCase": "8",
@@ -135,7 +135,7 @@
     }
   },
   {
-    "className": "number9",
+    "className": "Digit9",
     "eng": {
       "capsLock": "9",
       "lowerCase": "9",
@@ -150,7 +150,7 @@
     }
   },
   {
-    "className": "number0",
+    "className": "Digit0",
     "eng": {
       "capsLock": "0",
       "lowerCase": "0",
@@ -165,7 +165,7 @@
     }
   },
   {
-    "className": "minus",
+    "className": "Minus",
     "eng": {
       "capsLock": "-",
       "lowerCase": "-",
@@ -180,7 +180,7 @@
     }
   },
   {
-    "className": "equal",
+    "className": "Equal",
     "eng": {
       "capsLock": "=",
       "lowerCase": "=",
@@ -195,7 +195,7 @@
     }
   },
   {
-    "className": "backspace",
+    "className": "Backspace",
     "eng": {
       "lowerCase": "Backspace",
       "upperCase": "Backspace"
@@ -206,7 +206,7 @@
     }
   },
   {
-    "className": "tab",
+    "className": "Tab",
     "eng": {
       "lowerCase": "Tab",
       "upperCase": "Tab"
@@ -217,7 +217,7 @@
     }
   },
   {
-    "className": "key-Q",
+    "className": "KeyQ",
     "eng": {
       "lowerCase": "q",
       "upperCase": "Q"
@@ -228,7 +228,7 @@
     }
   },
   {
-    "className": "key-W",
+    "className": "KeyW",
     "eng": {
       "lowerCase": "w",
       "upperCase": "W"
@@ -239,7 +239,7 @@
     }
   },
   {
-    "className": "key-E",
+    "className": "KeyE",
     "eng": {
       "lowerCase": "e",
       "upperCase": "E"
@@ -250,7 +250,7 @@
     }
   },
   {
-    "className": "key-R",
+    "className": "KeyR",
     "eng": {
       "lowerCase": "r",
       "upperCase": "R"
@@ -261,7 +261,7 @@
     }
   },
   {
-    "className": "key-T",
+    "className": "KeyT",
     "eng": {
       "lowerCase": "t",
       "upperCase": "T"
@@ -272,7 +272,7 @@
     }
   },
   {
-    "className": "key-Y",
+    "className": "KeyY",
     "eng": {
       "lowerCase": "y",
       "upperCase": "Y"
@@ -283,7 +283,7 @@
     }
   },
   {
-    "className": "key-U",
+    "className": "KeyU",
     "eng": {
       "lowerCase": "u",
       "upperCase": "U"
@@ -294,7 +294,7 @@
     }
   },
   {
-    "className": "key-I",
+    "className": "KeyI",
     "eng": {
       "lowerCase": "i",
       "upperCase": "I"
@@ -305,7 +305,7 @@
     }
   },
   {
-    "className": "key-O",
+    "className": "KeyO",
     "eng": {
       "lowerCase": "o",
       "upperCase": "O"
@@ -316,7 +316,7 @@
     }
   },
   {
-    "className": "key-P",
+    "className": "KeyP",
     "eng": {
       "lowerCase": "p",
       "upperCase": "P"
@@ -327,7 +327,7 @@
     }
   },
   {
-    "className": "bracketleft",
+    "className": "BracketLeft",
     "eng": {
       "capsLock": "[",
       "lowerCase": "[",
@@ -342,7 +342,7 @@
     }
   },
   {
-    "className": "bracketright",
+    "className": "BracketRight",
     "eng": {
       "capsLock": "]",
       "lowerCase": "]",
@@ -357,7 +357,7 @@
     }
   },
   {
-    "className": "backslash",
+    "className": "Backslash",
     "eng": {
       "capsLock": "\\",
       "lowerCase": "\\",
@@ -372,7 +372,7 @@
     }
   },
   {
-    "className": "del",
+    "className": "Delete",
     "eng": {
       "lowerCase": "Del",
       "upperCase": "Del"
@@ -383,7 +383,7 @@
     }
   },
   {
-    "className": "capslock",
+    "className": "CapsLock",
     "eng": {
       "lowerCase": "CapsLock",
       "upperCase": "CapsLock"
@@ -394,7 +394,7 @@
     }
   },
   {
-    "className": "key-A",
+    "className": "KeyA",
     "eng": {
       "lowerCase": "a",
       "upperCase": "A"
@@ -405,7 +405,7 @@
     }
   },
   {
-    "className": "key-S",
+    "className": "KeyS",
     "eng": {
       "lowerCase": "s",
       "upperCase": "S"
@@ -416,7 +416,7 @@
     }
   },
   {
-    "className": "key-D",
+    "className": "KeyD",
     "eng": {
       "lowerCase": "d",
       "upperCase": "D"
@@ -427,7 +427,7 @@
     }
   },
   {
-    "className": "key-F",
+    "className": "KeyF",
     "eng": {
       "lowerCase": "f",
       "upperCase": "F"
@@ -438,7 +438,7 @@
     }
   },
   {
-    "className": "key-G",
+    "className": "KeyG",
     "eng": {
       "lowerCase": "g",
       "upperCase": "G"
@@ -449,7 +449,7 @@
     }
   },
   {
-    "className": "key-H",
+    "className": "KeyH",
     "eng": {
       "lowerCase": "h",
       "upperCase": "H"
@@ -460,7 +460,7 @@
     }
   },
   {
-    "className": "key-J",
+    "className": "KeyJ",
     "eng": {
       "lowerCase": "j",
       "upperCase": "J"
@@ -471,7 +471,7 @@
     }
   },
   {
-    "className": "key-K",
+    "className": "KeyK",
     "eng": {
       "lowerCase": "k",
       "upperCase": "K"
@@ -482,7 +482,7 @@
     }
   },
   {
-    "className": "key-L",
+    "className": "KeyL",
     "eng": {
       "lowerCase": "l",
       "upperCase": "L"
@@ -493,7 +493,7 @@
     }
   },
   {
-    "className": "semicolon",
+    "className": "Semicolon",
     "eng": {
       "capsLock": ";",
       "lowerCase": ";",
@@ -508,7 +508,7 @@
     }
   },
   {
-    "className": "quote",
+    "className": "Quote",
     "eng": {
       "capsLock": "'",
       "lowerCase": "'",
@@ -523,7 +523,7 @@
     }
   },
   {
-    "className": "enter",
+    "className": "Enter",
     "eng": {
       "lowerCase": "Enter",
       "upperCase": "Enter"
@@ -534,7 +534,7 @@
     }
   },
   {
-    "className": "shiftleft",
+    "className": "ShiftLeft",
     "eng": {
       "lowerCase": "Shift",
       "upperCase": "Shift"
@@ -545,7 +545,7 @@
     }
   },
   {
-    "className": "key-Z",
+    "className": "KeyZ",
     "eng": {
       "lowerCase": "z",
       "upperCase": "Z"
@@ -556,7 +556,7 @@
     }
   },
   {
-    "className": "key-X",
+    "className": "KeyX",
     "eng": {
       "lowerCase": "x",
       "upperCase": "X"
@@ -567,7 +567,7 @@
     }
   },
   {
-    "className": "key-C",
+    "className": "KeyC",
     "eng": {
       "lowerCase": "c",
       "upperCase": "C"
@@ -578,7 +578,7 @@
     }
   },
   {
-    "className": "key-V",
+    "className": "KeyV",
     "eng": {
       "lowerCase": "v",
       "upperCase": "V"
@@ -589,7 +589,7 @@
     }
   },
   {
-    "className": "key-B",
+    "className": "KeyB",
     "eng": {
       "lowerCase": "b",
       "upperCase": "B"
@@ -600,7 +600,7 @@
     }
   },
   {
-    "className": "key-N",
+    "className": "KeyN",
     "eng": {
       "lowerCase": "n",
       "upperCase": "N"
@@ -611,7 +611,7 @@
     }
   },
   {
-    "className": "key-M",
+    "className": "KeyM",
     "eng": {
       "lowerCase": "m",
       "upperCase": "M"
@@ -622,7 +622,7 @@
     }
   },
   {
-    "className": "comma",
+    "className": "Comma",
     "eng": {
       "capsLock": ",",
       "lowerCase": ",",
@@ -637,7 +637,7 @@
     }
   },
   {
-    "className": "period",
+    "className": "Period",
     "eng": {
       "capsLock": ".",
       "lowerCase": ".",
@@ -652,7 +652,7 @@
     }
   },
   {
-    "className": "slash",
+    "className": "Slash",
     "eng": {
       "capsLock": "/",
       "lowerCase": "/",
@@ -667,7 +667,7 @@
     }
   },
   {
-    "className": "up",
+    "className": "ArrowUp",
     "eng": {
       "lowerCase": "▲",
       "upperCase": "▲"
@@ -678,7 +678,7 @@
     }
   },
   {
-    "className": "shiftright",
+    "className": "ShiftRight",
     "eng": {
       "lowerCase": "Shift",
       "upperCase": "Shift"
@@ -689,7 +689,7 @@
     }
   },
   {
-    "className": "controlleft",
+    "className": "ControlLeft",
     "eng": {
       "lowerCase": "Ctrl",
       "upperCase": "Ctrl"
@@ -700,7 +700,7 @@
     }
   },
   {
-    "className": "metaleft",
+    "className": "MetaLeft",
     "eng": {
       "lowerCase": "Win",
       "upperCase": "Win"
@@ -711,7 +711,7 @@
     }
   },
   {
-    "className": "altleft",
+    "className": "AltLeft",
     "eng": {
       "lowerCase": "Alt",
       "upperCase": "Alt"
@@ -722,7 +722,7 @@
     }
   },
   {
-    "className": "space",
+    "className": "Space",
     "eng": {
       "lowerCase": " ",
       "upperCase": " "
@@ -733,7 +733,7 @@
     }
   },
   {
-    "className": "altright",
+    "className": "AltRight",
     "eng": {
       "lowerCase": "Alt",
       "upperCase": "Alt"
@@ -744,7 +744,7 @@
     }
   },
   {
-    "className": "left",
+    "className": "ArrowLeft",
     "eng": {
       "lowerCase": "◄",
       "upperCase": "◄"
@@ -755,7 +755,7 @@
     }
   },
   {
-    "className": "down",
+    "className": "ArrowDown",
     "eng": {
       "lowerCase": "▼",
       "upperCase": "▼"
@@ -766,7 +766,7 @@
     }
   },
   {
-    "className": "right",
+    "className": "ArrowRight",
     "eng": {
       "lowerCase": "►",
       "upperCase": "►"
@@ -777,7 +777,7 @@
     }
   },
   {
-    "className": "controlright",
+    "className": "ControlRight",
     "eng": {
       "lowerCase": "Ctrl",
       "upperCase": "Ctrl"

@@ -12,3 +12,10 @@ TEXT_AREA.setAttribute('rows', '7');
 CONTAINER.insertBefore(TEXT_AREA, TITLE.nextSibling);
 
 main();
+
+
+
+import Keyboard from './components/keys-events.js';
+const virtualKeyboard = document.querySelector('.keyboard');
+const keyboard = new Keyboard(virtualKeyboard);
+
