@@ -11,7 +11,7 @@ TEXT_AREA.className = 'container__text';
 TEXT_AREA.setAttribute('rows', '7');
 CONTAINER.insertBefore(TEXT_AREA, TITLE.nextSibling);
 
-main();
+await main();
 
 
 
