@@ -60,16 +60,13 @@ export const ShiftPresVirtual = (KEYBOARD_KEYS) => {
     
     } 
   };
-
+  
   SHIFT_LEFT.addEventListener('mousedown', (event) => {
-    event.preventDefault();
-    SHIFT_LEFT.focus(); // установка фокуса на элементе
       changeCase();
   });
   
   SHIFT_LEFT.addEventListener('mouseup', (event) => {
       changeCase();
-      SHIFT_LEFT.blur(); // снятие фокуса с элемент
   });
   SHIFT_RIGHT.addEventListener('mousedown', (event) => {
     event.preventDefault();

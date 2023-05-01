@@ -17,6 +17,9 @@ body{
   font-size: 18px;
   border: none;
 }
+.container__text:focus {
+  outline: none;
+}
 
 .container__keyboard {
   margin-top: 50px;
@@ -66,4 +69,11 @@ body{
 }
 .keyboard__key .current{
   display: inline;
+}
+.container__article{
+  margin-top: 25px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #7a7a7a;
 }

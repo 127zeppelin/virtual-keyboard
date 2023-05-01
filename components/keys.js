@@ -4,10 +4,11 @@ export const CONTAINER = document.createElement('div');
 CONTAINER.className = 'container';
 document.body.appendChild(CONTAINER);
 CONTAINER.appendChild(KEYBOARD);
-import{ChangeLeng} from './change-leng.js';
-import{ShiftPresPsih} from './press-shift.js'
-import{ShiftPresVirtual} from './press-shift.js'
-import{CapsPresPsih} from './press-caps.js'
+import { ChangeLeng } from './change-leng.js';
+import { ShiftPresPsih } from './press-shift.js'
+import { ShiftPresVirtual } from './press-shift.js'
+import { CapsPresPsih } from './press-caps.js'
+import { CapsPresVirtual } from './press-caps.js';
 
 async function getDataKeys() {
   const url = './components/key-values.json';
@@ -22,9 +23,7 @@ async function getDataKeys() {
 
 async function main() {
   const dataKeys = await getDataKeys();
-  console.log(dataKeys);
   const TEXT_INPUT = document.querySelector('.container__text');
-  console.log(TEXT_INPUT);
   for (let i = 0; dataKeys.length > i; i++) {
     const KEY_BTN = document.createElement('button');
     KEY_BTN.className = `keyboard__key ${dataKeys[i].className}`;
@@ -59,32 +58,38 @@ async function main() {
       } else if (dataKeys[i].className === 'Delete') {
         const cursorPos = TEXT_INPUT.selectionStart;
         const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
-        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos, -1);  
+        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos, -1);
         const newText = textBeforeCursor + textAfterCursor;
         TEXT_INPUT.value = newText;
         TEXT_INPUT.selectionStart = cursorPos;
         TEXT_INPUT.selectionEnd = cursorPos;
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'MetaLeft') {
-        TEXT_INPUT.value = TEXT_INPUT.value;
+        TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'ShiftLeft' || dataKeys[i].className === 'ShiftRight') {
         ShiftPresVirtual(KEYBOARD_KEYS);
       } else if (dataKeys[i].className === 'AltLeft' || dataKeys[i].className === 'AltRight') {
-         TEXT_INPUT.value = TEXT_INPUT.value;
+        TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'ControlLeft' || dataKeys[i].className === 'ControlRight') {
-        TEXT_INPUT.value = TEXT_INPUT.value;
-     } else {
+        TEXT_INPUT.focus();
+      } else if (dataKeys[i].className === 'CapsLock') {
+        CapsPresVirtual(KEYBOARD_KEYS);
+      } else if (dataKeys[i].className === 'Tab') {
+        CapsPresVirtual(KEYBOARD_KEYS);
+        TEXT_INPUT.focus();
+      } else {
         const spanContent = event.currentTarget.querySelector('.current').textContent;
         TEXT_INPUT.value += spanContent;
+        TEXT_INPUT.focus();
       }
     });
   }
-  
+
   const KEYBOARD_KEYS = await document.querySelectorAll('button.keyboard__key');
-  
-ChangeLeng(KEYBOARD_KEYS); 
-ShiftPresPsih(KEYBOARD_KEYS);  
-CapsPresPsih(KEYBOARD_KEYS);
+
+  ChangeLeng(KEYBOARD_KEYS);
+  ShiftPresPsih(KEYBOARD_KEYS);
+  CapsPresPsih(KEYBOARD_KEYS);
 }
 
 

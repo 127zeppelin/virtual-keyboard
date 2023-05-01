@@ -1,4 +1,3 @@
-
 export default class Keyboard {
   constructor(virtualKeyboard) {
     this.virtualKeyboard = virtualKeyboard;
@@ -14,6 +13,7 @@ export default class Keyboard {
       if (key) {
         const spanContent = key.querySelector('.current').textContent;
         key.classList.add('active');
+        event.preventDefault();
         if (key.classList.contains('Backspace')) {
           TEXT_INPUT.value = TEXT_INPUT.value.slice(0, -1);
         } else if (key.classList.contains('Delete')) {
@@ -28,20 +28,20 @@ export default class Keyboard {
         } else if (key.classList.contains('Enter')) {
           TEXT_INPUT.value += '\n'
         } else if (key.classList.contains('AltLeft') || key.classList.contains('AltRight')) {
-          TEXT_INPUT.value = TEXT_INPUT.value;
+          TEXT_INPUT.focus();
         } else if (key.classList.contains('ControlLeft') || key.classList.contains('ControlRight')) {
-          TEXT_INPUT.value = TEXT_INPUT.value;
+          TEXT_INPUT.focus();
         } else if (key.classList.contains('ShiftLeft') || key.classList.contains('ShiftRight')) {
-          TEXT_INPUT.value = TEXT_INPUT.value;
-        } else {
+          TEXT_INPUT.focus();
+        } else if (key.classList.contains('CapsLock')) {
+          TEXT_INPUT.focus();
+        } else if (key.classList.contains('Tab')) {
+          TEXT_INPUT.focus();
+        } else if (key.classList.contains('MetaLeft')) {
+          TEXT_INPUT.focus();
+        }else {
+          TEXT_INPUT.focus();
           TEXT_INPUT.value += spanContent;
-        }
-      }
-      // Проверяем, включен ли Caps Lock
-      if (event.getModifierState('CapsLock')) {
-        const capsLockKey = this.virtualKeyboard.querySelector('.CapsLock');
-        if (capsLockKey) {
-          capsLockKey.classList.add('active');
         }
       }
     });
@@ -49,7 +49,7 @@ export default class Keyboard {
     document.addEventListener('keyup', event => {
       const keyCode = event.code;
       const key = this.virtualKeyboard.querySelector(`.${keyCode}`);
-      if (key) {
+      if (key && !key.classList.contains('CapsLock')) {
         key.classList.remove('active');
       }
   
@@ -64,6 +64,6 @@ export default class Keyboard {
           capsLockKey.classList.remove('active');
         }
       }
-    });
+    }); 
   }
 }
