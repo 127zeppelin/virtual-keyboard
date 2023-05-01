@@ -1,6 +1,6 @@
 [
   {
-    "className": "Backquote",
+    "className": "Backquote caps",
     "eng": {
       "capsLock": "`",
       "lowerCase": "`",
@@ -15,7 +15,7 @@
     }
   },
   {
-    "className": "Digit1",
+    "className": "Digit1 caps",
     "eng": {
       "capsLock": "1",
       "lowerCase": "1",
@@ -30,7 +30,7 @@
     }
   },
   {
-    "className": "Digit2",
+    "className": "Digit2 caps",
     "eng": {
       "capsLock": "2",
       "lowerCase": "2",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "className": "Digit3",
+    "className": "Digit3 caps",
     "eng": {
       "capsLock": "3",
       "lowerCase": "3",
@@ -60,7 +60,7 @@
     }
   },
   {
-    "className": "Digit4",
+    "className": "Digit4 caps",
     "eng": {
       "capsLock": "4",
       "lowerCase": "4",
@@ -75,7 +75,7 @@
     }
   },
   {
-    "className": "Digit5",
+    "className": "Digit5 caps",
     "eng": {
       "capsLock": "5",
       "lowerCase": "5",
@@ -90,7 +90,7 @@
     }
   },
   {
-    "className": "Digit6",
+    "className": "Digit6 caps",
     "eng": {
       "capsLock": "6",
       "lowerCase": "6",
@@ -105,7 +105,7 @@
     }
   },
   {
-    "className": "Digit7",
+    "className": "Digit7 caps",
     "eng": {
       "capsLock": "7",
       "lowerCase": "7",
@@ -120,7 +120,7 @@
     }
   },
   {
-    "className": "Digit8",
+    "className": "Digit8 caps",
     "eng": {
       "capsLock": "8",
       "lowerCase": "8",
@@ -135,7 +135,7 @@
     }
   },
   {
-    "className": "Digit9",
+    "className": "Digit9 caps",
     "eng": {
       "capsLock": "9",
       "lowerCase": "9",
@@ -150,7 +150,7 @@
     }
   },
   {
-    "className": "Digit0",
+    "className": "Digit0 caps",
     "eng": {
       "capsLock": "0",
       "lowerCase": "0",
@@ -165,7 +165,7 @@
     }
   },
   {
-    "className": "Minus",
+    "className": "Minus caps",
     "eng": {
       "capsLock": "-",
       "lowerCase": "-",
@@ -180,7 +180,7 @@
     }
   },
   {
-    "className": "Equal",
+    "className": "Equal caps",
     "eng": {
       "capsLock": "=",
       "lowerCase": "=",
@@ -327,7 +327,7 @@
     }
   },
   {
-    "className": "BracketLeft",
+    "className": "BracketLeft caps",
     "eng": {
       "capsLock": "[",
       "lowerCase": "[",
@@ -342,7 +342,7 @@
     }
   },
   {
-    "className": "BracketRight",
+    "className": "BracketRight caps",
     "eng": {
       "capsLock": "]",
       "lowerCase": "]",
@@ -357,7 +357,7 @@
     }
   },
   {
-    "className": "Backslash",
+    "className": "Backslash caps",
     "eng": {
       "capsLock": "\\",
       "lowerCase": "\\",
@@ -372,7 +372,7 @@
     }
   },
   {
-    "className": "Delete",
+    "className": "Delete caps",
     "eng": {
       "lowerCase": "Del",
       "upperCase": "Del"
@@ -508,7 +508,7 @@
     }
   },
   {
-    "className": "Quote",
+    "className": "Quote caps",
     "eng": {
       "capsLock": "'",
       "lowerCase": "'",
@@ -622,7 +622,7 @@
     }
   },
   {
-    "className": "Comma",
+    "className": "Comma caps",
     "eng": {
       "capsLock": ",",
       "lowerCase": ",",
@@ -637,7 +637,7 @@
     }
   },
   {
-    "className": "Period",
+    "className": "Period caps",
     "eng": {
       "capsLock": ".",
       "lowerCase": ".",
@@ -652,7 +652,7 @@
     }
   },
   {
-    "className": "Slash",
+    "className": "Slash caps",
     "eng": {
       "capsLock": "/",
       "lowerCase": "/",

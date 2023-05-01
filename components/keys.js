@@ -5,7 +5,9 @@ CONTAINER.className = 'container';
 document.body.appendChild(CONTAINER);
 CONTAINER.appendChild(KEYBOARD);
 import{ChangeLeng} from './change-leng.js';
-
+import{ShiftPresPsih} from './press-shift.js'
+import{ShiftPresVirtual} from './press-shift.js'
+import{CapsPresPsih} from './press-caps.js'
 
 async function getDataKeys() {
   const url = './components/key-values.json';
@@ -63,9 +65,15 @@ async function main() {
         TEXT_INPUT.selectionStart = cursorPos;
         TEXT_INPUT.selectionEnd = cursorPos;
         TEXT_INPUT.focus();
-      } else if (dataKeys[i].className === 'MetaLeft' || dataKeys[i].className === 'ShiftLeft' || dataKeys[i].className === 'ShiftRight') {
+      } else if (dataKeys[i].className === 'MetaLeft') {
         TEXT_INPUT.value = TEXT_INPUT.value;
-      } else {
+      } else if (dataKeys[i].className === 'ShiftLeft' || dataKeys[i].className === 'ShiftRight') {
+        ShiftPresVirtual(KEYBOARD_KEYS);
+      } else if (dataKeys[i].className === 'AltLeft' || dataKeys[i].className === 'AltRight') {
+         TEXT_INPUT.value = TEXT_INPUT.value;
+      } else if (dataKeys[i].className === 'ControlLeft' || dataKeys[i].className === 'ControlRight') {
+        TEXT_INPUT.value = TEXT_INPUT.value;
+     } else {
         const spanContent = event.currentTarget.querySelector('.current').textContent;
         TEXT_INPUT.value += spanContent;
       }
@@ -75,6 +83,8 @@ async function main() {
   const KEYBOARD_KEYS = await document.querySelectorAll('button.keyboard__key');
   
 ChangeLeng(KEYBOARD_KEYS); 
+ShiftPresPsih(KEYBOARD_KEYS);  
+CapsPresPsih(KEYBOARD_KEYS);
 }
 
 
