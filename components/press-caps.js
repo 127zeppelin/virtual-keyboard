@@ -49,7 +49,6 @@ export const CapsPresVirtual = (KEYBOARD_KEYS) => {
 
   CAPS_LOCK.addEventListener('mousemove', (event) => {
     CAPS_LOCK.focus();
-    console.log('Фокус');
 });
 
   CAPS_LOCK.addEventListener('mousedown', (event) => {
