@@ -19,8 +19,9 @@ export default class Keyboard {
         } else if (key.classList.contains('Delete')) {
           const cursorPos = TEXT_INPUT.selectionStart;
           const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
-          const textAfterCursor = TEXT_INPUT.value.slice(cursorPos, -1);  
-          const newText = textBeforeCursor + textAfterCursor;
+          const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+          const textCute = textAfterCursor.slice(1);
+          const newText = textBeforeCursor + textCute;
           TEXT_INPUT.value = newText;
           TEXT_INPUT.selectionStart = cursorPos;
           TEXT_INPUT.selectionEnd = cursorPos;
