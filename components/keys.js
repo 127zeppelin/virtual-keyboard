@@ -53,17 +53,18 @@ async function main() {
     KEY_BTN.addEventListener('click', (event) => {
       if (dataKeys[i].className === 'Enter') {
         TEXT_INPUT.value += '\n'
-      } else if (dataKeys[i].className === 'Backspace') {
-        TEXT_INPUT.value = TEXT_INPUT.value.slice(0, -1);
-      } else if (dataKeys[i].className === 'Delete') {
+      } else if (dataKeys[i].className === 'Delete caps') {
         const cursorPos = TEXT_INPUT.selectionStart;
         const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
-        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos, -1);
-        const newText = textBeforeCursor + textAfterCursor;
+        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+        const textCute = textAfterCursor.slice(1);
+        const newText = textBeforeCursor + textCute;
         TEXT_INPUT.value = newText;
         TEXT_INPUT.selectionStart = cursorPos;
         TEXT_INPUT.selectionEnd = cursorPos;
         TEXT_INPUT.focus();
+      } else if (dataKeys[i].className === 'Backspace') {
+        TEXT_INPUT.value = TEXT_INPUT.value.slice(0, -1);
       } else if (dataKeys[i].className === 'MetaLeft') {
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'ShiftLeft' || dataKeys[i].className === 'ShiftRight') {
