@@ -54,11 +54,19 @@ async function main() {
     if(savedLayout === 'eng-' && savedCaps !== 'up'){
       TEXT_EN_LC.classList.add('current');
     } else  if(savedLayout === 'eng-' && savedCaps === 'up'){
-      TEXT_EN_UC.classList.add('current');
+      if(KEY_BTN.classList.contains('caps')){
+        TEXT_EN_LC.classList.add('current');
+      } else {
+        TEXT_EN_UC.classList.add('current');
+      }
     } else  if (savedLayout === 'ru-' && savedCaps !== 'up') {
       TEXT_RU_LC.classList.add('current');
     } else  if(savedLayout === 'ru-' && savedCaps === 'up'){
-      TEXT_RU_UC.classList.add('current');
+      if(KEY_BTN.classList.contains('caps')){
+        TEXT_RU_LC.classList.add('current');
+      } else {
+        TEXT_RU_UC.classList.add('current');
+      }
     } else {
       TEXT_EN_LC.classList.add('current');
     } 
