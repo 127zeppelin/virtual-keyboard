@@ -8,7 +8,7 @@ import { ChangeLeng } from './change-leng.js';
 import { ShiftPresPsih } from './press-shift.js'
 import { ShiftPresVirtual } from './press-shift.js'
 import { CapsPresPsih } from './press-caps.js'
-import { CapsPresVirtual } from './press-caps.js';
+//import { CapsPresVirtual } from './press-caps.js';
 
 async function getDataKeys() {
   const url = './components/key-values.json';
@@ -23,6 +23,7 @@ async function getDataKeys() {
 
 async function main() {
   const dataKeys = await getDataKeys();
+  
   const TEXT_INPUT = document.querySelector('.container__text');
   for (let i = 0; dataKeys.length > i; i++) {
     const KEY_BTN = document.createElement('button');
@@ -74,9 +75,8 @@ async function main() {
       } else if (dataKeys[i].className === 'ControlLeft' || dataKeys[i].className === 'ControlRight') {
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'CapsLock') {
-        CapsPresVirtual(KEYBOARD_KEYS);
+        //CapsPresVirtual(KEYBOARD_KEYS);
       } else if (dataKeys[i].className === 'Tab') {
-        CapsPresVirtual(KEYBOARD_KEYS);
         TEXT_INPUT.focus();
       } else {
         const spanContent = event.currentTarget.querySelector('.current').textContent;
@@ -86,14 +86,12 @@ async function main() {
     });
   }
 
-  const KEYBOARD_KEYS = await document.querySelectorAll('button.keyboard__key');
-
+  const KEYBOARD_KEYS = document.querySelectorAll('button.keyboard__key');
+  
   ChangeLeng(KEYBOARD_KEYS);
   ShiftPresPsih(KEYBOARD_KEYS);
   CapsPresPsih(KEYBOARD_KEYS);
 }
-
-
 
 
 export { main };

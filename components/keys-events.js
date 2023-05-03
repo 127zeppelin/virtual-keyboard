@@ -12,7 +12,10 @@ export default class Keyboard {
       const key = this.virtualKeyboard.querySelector(`.${keyCode}`);
       if (key) {
         const spanContent = key.querySelector('.current').textContent;
-        key.classList.add('active');
+        if(!key.classList.contains('CapsLock')){
+          key.classList.add('active');
+        }
+        
         event.preventDefault();
         if (key.classList.contains('Backspace')) {
           TEXT_INPUT.value = TEXT_INPUT.value.slice(0, -1);
@@ -52,18 +55,6 @@ export default class Keyboard {
       const key = this.virtualKeyboard.querySelector(`.${keyCode}`);
       if (key && !key.classList.contains('CapsLock')) {
         key.classList.remove('active');
-      }
-  
-      if (event.getModifierState('CapsLock')) {
-        const capsLockKey = this.virtualKeyboard.querySelector('.CapsLock');
-        if (capsLockKey) {
-          capsLockKey.classList.add('active');
-        }
-      } else {
-        const capsLockKey = this.virtualKeyboard.querySelector('.CapsLock');
-        if (capsLockKey) {
-          capsLockKey.classList.remove('active');
-        }
       }
     }); 
   }
