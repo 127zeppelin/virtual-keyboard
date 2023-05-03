@@ -1,40 +1,40 @@
-import {pressedCaps} from './press-caps.js';
 export const ChangeLeng = (KEYBOARD_KEYS) => {
  
   let pressedKeys = new Set();
-  let currentLayout = 'eng-'+ pressedCaps;
+  let currentLayout = 'eng-';
   const changeLanguage = () => {
     
-    console.log(currentLayout); 
+    
     for (let i = 0; i < KEYBOARD_KEYS.length; i++) {
       switch (true) {
         case KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.contains('current'):
           KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.remove('current');
           KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.add('current');
-          currentLayout = 'ru-'+ pressedCaps;
+          currentLayout = 'ru-';
           break;
         case KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.contains('current'):
           KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.add('current');
           KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.remove('current');
-          currentLayout = 'eng-'+ pressedCaps;
+          currentLayout = 'eng-';
           break;
-        case KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.contains('current'):
-          KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.remove('current');
-          KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.add('current');
-          currentLayout = 'ru-'+ pressedCaps;;
+        case KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.contains('current'):
+          KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.remove('current');
+          KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.add('current');
+          currentLayout = 'ru-';
           break;
-        case KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.contains('current'):
-          KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.remove('current');
-          KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.add('current');
-          currentLayout = 'eng-'+ pressedCaps;
+        case KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.contains('current'):
+          KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.remove('current');
+          KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.add('current');
+          currentLayout = 'eng-';
           break;
         default:
           break;
       }
     }
-    
+    console.log(currentLayout); 
+    localStorage.setItem('keyboardLayout', currentLayout);
   };
-  localStorage.setItem('keyboardLayout', currentLayout);
+  
   document.addEventListener('keydown', (event) => {
     pressedKeys.add(event.code);
 

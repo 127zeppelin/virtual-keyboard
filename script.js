@@ -12,7 +12,7 @@ TEXT_AREA.setAttribute('rows', '7');
 CONTAINER.insertBefore(TEXT_AREA, TITLE.nextSibling);
 
 const KEYBOARD_KEYS = document.querySelectorAll('button.keyboard__key');
-window.addEventListener('load', () => {
+/*window.addEventListener('load', () => {
   const savedLayout = localStorage.getItem('keyboardLayout');
   console.log(savedLayout);
   if (savedLayout === 'ru-up') {
@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
   }
 });
 
-
+*/
 await main();
 
 

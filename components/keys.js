@@ -8,7 +8,6 @@ import { ChangeLeng } from './change-leng.js';
 import { ShiftPresPsih } from './press-shift.js'
 import { ShiftPresVirtual } from './press-shift.js'
 import { CapsPresPsih } from './press-caps.js'
-//import { CapsPresVirtual } from './press-caps.js';
 
 async function getDataKeys() {
   const url = './components/key-values.json';
@@ -23,7 +22,8 @@ async function getDataKeys() {
 
 async function main() {
   const dataKeys = await getDataKeys();
-  
+  const savedLayout = localStorage.getItem('keyboardLayout');
+  const savedCaps = localStorage.getItem('keyboardCaps');
   const TEXT_INPUT = document.querySelector('.container__text');
   for (let i = 0; dataKeys.length > i; i++) {
     const KEY_BTN = document.createElement('button');
@@ -31,7 +31,7 @@ async function main() {
     KEYBOARD.appendChild(KEY_BTN);
 
     const TEXT_EN_LC = document.createElement('span');
-    TEXT_EN_LC.className = 'eng-doun current';
+    TEXT_EN_LC.className = 'eng-down';
     KEY_BTN.appendChild(TEXT_EN_LC);
     TEXT_EN_LC.innerHTML = `${dataKeys[i].eng.lowerCase}`;
 
@@ -41,7 +41,7 @@ async function main() {
     TEXT_EN_UC.innerHTML = `${dataKeys[i].eng.upperCase}`;
 
     const TEXT_RU_LC = document.createElement('span');
-    TEXT_RU_LC.className = 'ru-doun';
+    TEXT_RU_LC.className = 'ru-down';
     KEY_BTN.appendChild(TEXT_RU_LC);
     TEXT_RU_LC.innerHTML = `${dataKeys[i].rus.lowerCase}`;
 
@@ -50,6 +50,20 @@ async function main() {
     KEY_BTN.appendChild(TEXT_RU_UC);
     TEXT_RU_UC.innerHTML = `${dataKeys[i].rus.upperCase}`;
 
+    
+    if(savedLayout === 'eng-' && savedCaps !== 'up'){
+      TEXT_EN_LC.classList.add('current');
+    } else  if(savedLayout === 'eng-' && savedCaps === 'up'){
+      TEXT_EN_UC.classList.add('current');
+    } else  if (savedLayout === 'ru-' && savedCaps !== 'up') {
+      TEXT_RU_LC.classList.add('current');
+    } else  if(savedLayout === 'ru-' && savedCaps === 'up'){
+      TEXT_RU_UC.classList.add('current');
+    } else {
+      TEXT_EN_LC.classList.add('current');
+    } 
+    
+    
 
     KEY_BTN.addEventListener('click', (event) => {
       if (dataKeys[i].className === 'Enter') {
@@ -75,7 +89,7 @@ async function main() {
       } else if (dataKeys[i].className === 'ControlLeft' || dataKeys[i].className === 'ControlRight') {
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'CapsLock') {
-        //CapsPresVirtual(KEYBOARD_KEYS);
+        
       } else if (dataKeys[i].className === 'Tab') {
         TEXT_INPUT.focus();
       } else {
@@ -85,7 +99,10 @@ async function main() {
       }
     });
   }
-
+  const CAPS_LOCK = document.querySelector('.CapsLock');
+  if(savedCaps === 'up'){
+    CAPS_LOCK.classList.add('active');
+  }
   const KEYBOARD_KEYS = document.querySelectorAll('button.keyboard__key');
   
   ChangeLeng(KEYBOARD_KEYS);

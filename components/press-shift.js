@@ -3,17 +3,17 @@ export const ShiftPresPsih = (KEYBOARD_KEYS) => {
   
   const changeCase = () => {
     for(let i = 0; i < KEYBOARD_KEYS.length; i++){
-    if (KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.contains('current')) {
-        KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.remove('current');
+    if (KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.contains('current')) {
+        KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.remove('current');
         KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.add('current');
-      } else if  (KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.contains('current')) {
-        KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.remove('current');
+      } else if  (KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.contains('current')) {
+        KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.remove('current');
         KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.add('current');
       } else if  (KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.contains('current')) {
         KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.remove('current');
-        KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.add('current');
+        KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.add('current');
       } else if  (KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.contains('current')) {
-        KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.add('current');
+        KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.add('current');
         KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.remove('current');
       }
     
@@ -44,17 +44,17 @@ export const ShiftPresVirtual = (KEYBOARD_KEYS) => {
   const SHIFT_RIGHT = document.querySelector('.ShiftRight');
   const changeCase = () => {
     for(let i = 0; i < KEYBOARD_KEYS.length; i++){
-    if (KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.contains('current')) {
-        KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.remove('current');
+    if (KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.contains('current')) {
+        KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.remove('current');
         KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.add('current');
-      } else if  (KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.contains('current')) {
-        KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.remove('current');
+      } else if  (KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.contains('current')) {
+        KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.remove('current');
         KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.add('current');
       } else if  (KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.contains('current')) {
         KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.remove('current');
-        KEYBOARD_KEYS[i].querySelector('span.eng-doun').classList.add('current');
+        KEYBOARD_KEYS[i].querySelector('span.eng-down').classList.add('current');
       } else if  (KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.contains('current')) {
-        KEYBOARD_KEYS[i].querySelector('span.ru-doun').classList.add('current');
+        KEYBOARD_KEYS[i].querySelector('span.ru-down').classList.add('current');
         KEYBOARD_KEYS[i].querySelector('span.ru-up').classList.remove('current');
       }
     
