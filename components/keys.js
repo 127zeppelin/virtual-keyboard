@@ -59,7 +59,13 @@ async function main() {
       } else {
         TEXT_EN_UC.classList.add('current');
       }
-    } else  if (savedLayout === 'ru-' && savedCaps !== 'up') {
+    } else  if(savedLayout === null && savedCaps === 'up'){
+      if(KEY_BTN.classList.contains('caps')){
+        TEXT_EN_LC.classList.add('current');
+      } else {
+        TEXT_EN_UC.classList.add('current');
+      }
+    }else  if (savedLayout === 'ru-' && savedCaps !== 'up') {
       TEXT_RU_LC.classList.add('current');
     } else  if(savedLayout === 'ru-' && savedCaps === 'up'){
       if(KEY_BTN.classList.contains('caps')){
