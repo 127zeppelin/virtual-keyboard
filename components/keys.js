@@ -93,11 +93,11 @@ async function main() {
         const cursorPos = TEXT_INPUT.selectionStart;
         const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
         const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
-        const textCute = textBeforeCursor.slice(0, -1);
+        const textCute = (textBeforeCursor.length > 0) ? textBeforeCursor.slice(0, -1) : textBeforeCursor;
         const newText = textCute + textAfterCursor;
         TEXT_INPUT.value = newText;
-        TEXT_INPUT.selectionStart = cursorPos - 1;
-        TEXT_INPUT.selectionEnd = cursorPos - 1;
+        TEXT_INPUT.selectionStart = (textBeforeCursor.length > 0) ? cursorPos - 1 :  cursorPos; 
+        TEXT_INPUT.selectionEnd = (textBeforeCursor.length > 0) ? cursorPos - 1 :  cursorPos; 
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'MetaLeft') {
         TEXT_INPUT.focus();
