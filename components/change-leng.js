@@ -3,8 +3,6 @@ export const ChangeLeng = (KEYBOARD_KEYS) => {
   let pressedKeys = new Set();
   let currentLayout = 'eng-';
   const changeLanguage = () => {
-    
-    
     for (let i = 0; i < KEYBOARD_KEYS.length; i++) {
       switch (true) {
         case KEYBOARD_KEYS[i].querySelector('span.eng-up').classList.contains('current'):
@@ -31,10 +29,8 @@ export const ChangeLeng = (KEYBOARD_KEYS) => {
           break;
       }
     }
-    console.log(currentLayout); 
     localStorage.setItem('keyboardLayout', currentLayout);
   };
-  
   document.addEventListener('keydown', (event) => {
     pressedKeys.add(event.code);
 
@@ -44,9 +40,7 @@ export const ChangeLeng = (KEYBOARD_KEYS) => {
       changeLanguage();
     }
   });
-
   document.addEventListener('keyup', (event) => {
     pressedKeys.delete(event.code);
   });
 };
-
