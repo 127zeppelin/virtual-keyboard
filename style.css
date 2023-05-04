@@ -1,0 +1,79 @@
+body{
+  background-color: #dcdcdc;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.container__title{
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+}
+
+.container__text {
+  width: calc(100% - 50px);
+  border-radius: 25px;
+  padding: 25px;
+  font-size: 18px;
+  border: none;
+}
+.container__text:focus {
+  outline: none;
+}
+
+.container__keyboard {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 10px;
+}
+
+.keyboard__key {
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+}
+.keyboard__key:hover {
+  background-color: #AE76E2;
+  color: #ffffff;
+  transition: all 0.5s;
+}
+.keyboard__key:active {
+  background-color: blueviolet;
+  color: #ffffff;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  transition: all 0.5s;
+}
+.keyboard__key.active {
+  background-color: blueviolet;
+  color: #ffffff;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  transition: all 0.5s;
+}
+
+.Backspace,
+.CapsLock,
+.Enter,
+.ShiftLeft,
+.ShiftRight {
+  grid-column: span 2;
+}
+.Space{
+  grid-column: span 7;
+}
+.keyboard__key span{
+  display: none;
+}
+.keyboard__key .current{
+  display: inline;
+}
+.container__article{
+  margin-top: 25px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #7a7a7a;
+}
