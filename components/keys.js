@@ -81,9 +81,11 @@ async function main() {
         TEXT_INPUT.value += '\n'
       } else if (dataKeys[i].className === 'Delete caps') {
         const cursorPos = TEXT_INPUT.selectionStart;
+        const cursorPosEnd = TEXT_INPUT.selectionEnd;
+        const Characters = cursorPosEnd - cursorPos;
         const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
         const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
-        const textCute = textAfterCursor.slice(1);
+        const textCute = Characters > 0 ? textAfterCursor.slice(Characters) : textAfterCursor.slice(1);
         const newText = textBeforeCursor + textCute;
         TEXT_INPUT.value = newText;
         TEXT_INPUT.selectionStart = cursorPos;
@@ -91,13 +93,17 @@ async function main() {
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'Backspace') {
         const cursorPos = TEXT_INPUT.selectionStart;
-        const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
-        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
-        const textCute = (textBeforeCursor.length > 0) ? textBeforeCursor.slice(0, -1) : textBeforeCursor;
+        const cursorPosEnd = TEXT_INPUT.selectionEnd;
+        const Characters = cursorPosEnd - cursorPos;
+        const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPosEnd);
+        const textAfterCursor = TEXT_INPUT.value.slice(cursorPosEnd);
+        const textCute = textBeforeCursor.length > 0 && Characters < 1 ? textBeforeCursor.slice(0, -1) :
+                          textBeforeCursor.length > 0 && Characters > 0 ? textBeforeCursor.slice(0, - Characters) : 
+                          textBeforeCursor;
         const newText = textCute + textAfterCursor;
         TEXT_INPUT.value = newText;
-        TEXT_INPUT.selectionStart = (textBeforeCursor.length > 0) ? cursorPos - 1 :  cursorPos; 
-        TEXT_INPUT.selectionEnd = (textBeforeCursor.length > 0) ? cursorPos - 1 :  cursorPos; 
+        TEXT_INPUT.selectionStart = (textBeforeCursor.length > 0 && Characters < 1) ? cursorPos - 1 :  cursorPos; 
+        TEXT_INPUT.selectionEnd = (textBeforeCursor.length > 0 && Characters < 1) ? cursorPos - 1 :  cursorPos; 
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'MetaLeft') {
         TEXT_INPUT.focus();
