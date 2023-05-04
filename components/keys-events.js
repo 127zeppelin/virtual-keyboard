@@ -60,7 +60,6 @@ export default class Keyboard {
         } else if (key.classList.contains('MetaLeft')) {
           TEXT_INPUT.focus();
         } else {
-          const spanContent = event.currentTarget.querySelector('.current').textContent;
           const cursorPos = TEXT_INPUT.selectionStart;
           const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
           const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
