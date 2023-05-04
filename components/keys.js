@@ -76,9 +76,6 @@ async function main() {
     } else {
       TEXT_EN_LC.classList.add('current');
     } 
-    
-    
-
     KEY_BTN.addEventListener('click', (event) => {
       if (dataKeys[i].className === 'Enter') {
         TEXT_INPUT.value += '\n'
@@ -93,7 +90,15 @@ async function main() {
         TEXT_INPUT.selectionEnd = cursorPos;
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'Backspace') {
-        TEXT_INPUT.value = TEXT_INPUT.value.slice(0, -1);
+        const cursorPos = TEXT_INPUT.selectionStart;
+        const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
+        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+        const textCute = textBeforeCursor.slice(0, -1);
+        const newText = textCute + textAfterCursor;
+        TEXT_INPUT.value = newText;
+        TEXT_INPUT.selectionStart = cursorPos - 1;
+        TEXT_INPUT.selectionEnd = cursorPos - 1;
+        TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'MetaLeft') {
         TEXT_INPUT.focus();
       } else if (dataKeys[i].className === 'ShiftLeft' || dataKeys[i].className === 'ShiftRight') {
@@ -105,10 +110,25 @@ async function main() {
       } else if (dataKeys[i].className === 'CapsLock') {
         
       } else if (dataKeys[i].className === 'Tab') {
+        const cursorPos = TEXT_INPUT.selectionStart;
+        const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
+        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+        const TAB = '   ';
+        const newText = textBeforeCursor + TAB + textAfterCursor;
+        TEXT_INPUT.value = newText;
+        TEXT_INPUT.selectionStart = cursorPos + 3;
+        TEXT_INPUT.selectionEnd = cursorPos + 3;
         TEXT_INPUT.focus();
       } else {
         const spanContent = event.currentTarget.querySelector('.current').textContent;
-        TEXT_INPUT.value += spanContent;
+        const cursorPos = TEXT_INPUT.selectionStart;
+        const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
+        const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+        const newText = textBeforeCursor + spanContent + textAfterCursor;
+        TEXT_INPUT.value = newText;
+        TEXT_INPUT.selectionStart = cursorPos + 1;
+        TEXT_INPUT.selectionEnd = cursorPos + 1;
+        TEXT_INPUT.focus();
         TEXT_INPUT.focus();
       }
     });

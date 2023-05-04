@@ -4,7 +4,7 @@ export default class Keyboard {
     this.keys = virtualKeyboard.querySelectorAll('.keyboard__key');
     this.addEventListeners();
   }
-  
+
   addEventListeners() {
     document.addEventListener('keydown', event => {
       const TEXT_INPUT = document.querySelector('.container__text');
@@ -12,13 +12,21 @@ export default class Keyboard {
       const key = this.virtualKeyboard.querySelector(`.${keyCode}`);
       if (key) {
         const spanContent = key.querySelector('.current').textContent;
-        if(!key.classList.contains('CapsLock')){
+        if (!key.classList.contains('CapsLock')) {
           key.classList.add('active');
         }
-        
+
         event.preventDefault();
         if (key.classList.contains('Backspace')) {
-          TEXT_INPUT.value = TEXT_INPUT.value.slice(0, -1);
+          const cursorPos = TEXT_INPUT.selectionStart;
+          const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
+          const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+          const textCute = textBeforeCursor.slice(0, -1);
+          const newText = textCute + textAfterCursor;
+          TEXT_INPUT.value = newText;
+          TEXT_INPUT.selectionStart = cursorPos - 1;
+          TEXT_INPUT.selectionEnd = cursorPos - 1;
+          TEXT_INPUT.focus();
         } else if (key.classList.contains('Delete')) {
           const cursorPos = TEXT_INPUT.selectionStart;
           const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
@@ -40,22 +48,38 @@ export default class Keyboard {
         } else if (key.classList.contains('CapsLock')) {
           TEXT_INPUT.focus();
         } else if (key.classList.contains('Tab')) {
+          const cursorPos = TEXT_INPUT.selectionStart;
+          const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
+          const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+          const TAB = '   ';
+          const newText = textBeforeCursor + TAB + textAfterCursor;
+          TEXT_INPUT.value = newText;
+          TEXT_INPUT.selectionStart = cursorPos + 3;
+          TEXT_INPUT.selectionEnd = cursorPos + 3;
           TEXT_INPUT.focus();
         } else if (key.classList.contains('MetaLeft')) {
           TEXT_INPUT.focus();
-        }else {
+        } else {
+          const spanContent = event.currentTarget.querySelector('.current').textContent;
+          const cursorPos = TEXT_INPUT.selectionStart;
+          const textBeforeCursor = TEXT_INPUT.value.slice(0, cursorPos);
+          const textAfterCursor = TEXT_INPUT.value.slice(cursorPos);
+          const newText = textBeforeCursor + spanContent + textAfterCursor;
+          TEXT_INPUT.value = newText;
+          TEXT_INPUT.selectionStart = cursorPos + 1;
+          TEXT_INPUT.selectionEnd = cursorPos + 1;
           TEXT_INPUT.focus();
-          TEXT_INPUT.value += spanContent;
+          TEXT_INPUT.focus();
         }
       }
     });
-  
+
     document.addEventListener('keyup', event => {
       const keyCode = event.code;
       const key = this.virtualKeyboard.querySelector(`.${keyCode}`);
       if (key && !key.classList.contains('CapsLock')) {
         key.classList.remove('active');
       }
-    }); 
+    });
   }
 }
